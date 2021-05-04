@@ -8,10 +8,7 @@ trait ExerciseComponent {
 
   class ExerciseService(sparkSession: SparkSession) {
     val folderPath = "./src/main/scala/exercise/data/";
-//   val schema = StructType([
-//      StructField("member_srl", IntegerType(), True),
-//    StructField("click_day", IntegerType(), True),
-//    StructField("productid", IntegerType(), True)])
+
     val productRD = sparkSession.read.option("header","true").csv(folderPath + "products.csv")
     val salesRD = sparkSession.read.option("header","true").csv(folderPath + "sales.csv")
     val sellersRD = sparkSession.read.csv(folderPath + "sellers.csv")
