@@ -13,7 +13,6 @@ trait FilterComponent{
       val filterRDD = logRDD.filter(item => item.contains("E0"))
       filterRDD.take(10).foreach(println)
       println(filterRDD.count())
-
     }
   }
 
